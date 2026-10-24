@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="cgallegosTallerS3.Views.ContactoPage"
+             Title="Registro de contacto"
+             BackgroundColor="#F4F6FB">
+
+    <!-- Estilos IMPLÍCITOS: sin x:Key, se aplican a todos los controles del tipo indicado -->
+    <ContentPage.Resources>
+        <Style TargetType="Label">
+            <Setter Property="TextColor" Value="#1F3A93" />
+            <Setter Property="FontSize" Value="15" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="Margin" Value="0,8,0,0" />
+        </Style>
+        <Style TargetType="Entry">
+            <Setter Property="TextColor" Value="#212121" />
+            <Setter Property="PlaceholderColor" Value="#9E9E9E" />
+            <Setter Property="BackgroundColor" Value="White" />
+            <Setter Property="FontSize" Value="15" />
+        </Style>
+        <Style TargetType="Picker">
+            <Setter Property="TextColor" Value="#212121" />
+            <Setter Property="TitleColor" Value="#9E9E9E" />
+            <Setter Property="BackgroundColor" Value="White" />
+            <Setter Property="FontSize" Value="15" />
+        </Style>
+        <Style TargetType="DatePicker">
+            <Setter Property="TextColor" Value="#212121" />
+            <Setter Property="BackgroundColor" Value="White" />
+            <Setter Property="FontSize" Value="15" />
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor" Value="#1F3A93" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="CornerRadius" Value="10" />
+            <Setter Property="HeightRequest" Value="50" />
+            <Setter Property="Margin" Value="0,20,0,0" />
+        </Style>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="4">
+
+            <Label Text="Tipo de identificación" />
+            <Picker x:Name="pkrTipo"
+                    Title="Seleccione..."
+                    SelectedIndexChanged="OnTipoChanged">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>CI</x:String>
+                        <x:String>RUC</x:String>
+                        <x:String>Pasaporte</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Label Text="Identificación" />
+            <Entry x:Name="txtIdentificacion" Placeholder="Seleccione primero el tipo" />
+
+            <Label Text="Nombres" />
+            <Entry x:Name="txtNombres" Placeholder="Nombres" />
+
+            <Label Text="Apellidos" />
+            <Entry x:Name="txtApellidos" Placeholder="Apellidos" />
+
+            <Label Text="Fecha" />
+            <DatePicker x:Name="dpFecha" Format="dd/MM/yyyy" />
+
+            <Label Text="Correo" />
+            <Entry x:Name="txtCorreo" Placeholder="correo@ejemplo.com" Keyboard="Email" />
+
+            <Label Text="Salario" />
+            <Entry x:Name="txtSalario" Placeholder="0.00" Keyboard="Numeric" />
+
+            <Button Text="Guardar y ver resumen" Clicked="OnGuardarClicked" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

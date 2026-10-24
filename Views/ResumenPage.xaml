@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="cgallegosTallerS3.Views.ResumenPage"
+             Title="Resumen del contacto"
+             BackgroundColor="#FFF8EE">
+
+    <!-- Estilos EXPLÍCITOS: tienen x:Key y cada control los referencia con Style="{StaticResource ...}" -->
+    <ContentPage.Resources>
+        <Style x:Key="TituloResumen" TargetType="Label">
+            <Setter Property="FontSize" Value="22" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="TextColor" Value="#C0392B" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="Margin" Value="0,0,0,10" />
+        </Style>
+        <Style x:Key="EtiquetaCampo" TargetType="Label">
+            <Setter Property="FontSize" Value="13" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="TextColor" Value="#7F8C8D" />
+            <Setter Property="Margin" Value="0,8,0,0" />
+        </Style>
+        <Style x:Key="ValorCampo" TargetType="Label">
+            <Setter Property="FontSize" Value="17" />
+            <Setter Property="TextColor" Value="#2C3E50" />
+        </Style>
+        <Style x:Key="ValorAporte" TargetType="Label">
+            <Setter Property="FontSize" Value="24" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="TextColor" Value="#27AE60" />
+        </Style>
+        <Style x:Key="BotonExportar" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="#E67E22" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="CornerRadius" Value="25" />
+            <Setter Property="HeightRequest" Value="50" />
+            <Setter Property="Margin" Value="0,25,0,0" />
+        </Style>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20">
+
+            <Label Text="Datos registrados" Style="{StaticResource TituloResumen}" />
+
+            <Label Text="Tipo de identificación" Style="{StaticResource EtiquetaCampo}" />
+            <Label x:Name="lblTipo" Style="{StaticResource ValorCampo}" />
+
+            <Label Text="Identificación" Style="{StaticResource EtiquetaCampo}" />
+            <Label x:Name="lblIdentificacion" Style="{StaticResource ValorCampo}" />
+
+            <Label Text="Nombres" Style="{StaticResource EtiquetaCampo}" />
+            <Label x:Name="lblNombres" Style="{StaticResource ValorCampo}" />
+
+            <Label Text="Apellidos" Style="{StaticResource EtiquetaCampo}" />
+            <Label x:Name="lblApellidos" Style="{StaticResource ValorCampo}" />
+
+            <Label Text="Fecha" Style="{StaticResource EtiquetaCampo}" />
+            <Label x:Name="lblFecha" Style="{StaticResource ValorCampo}" />
+
+            <Label Text="Correo" Style="{StaticResource EtiquetaCampo}" />
+            <Label x:Name="lblCorreo" Style="{StaticResource ValorCampo}" />
+
+            <Label Text="Salario" Style="{StaticResource EtiquetaCampo}" />
+            <Label x:Name="lblSalario" Style="{StaticResource ValorCampo}" />
+
+            <Label Text="Aporte IESS (9.45 %)" Style="{StaticResource EtiquetaCampo}" />
+            <Label x:Name="lblAporte" Style="{StaticResource ValorAporte}" />
+
+            <Button Text="Exportar a archivo de texto"
+                    Style="{StaticResource BotonExportar}"
+                    Clicked="OnExportarClicked" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
